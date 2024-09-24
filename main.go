@@ -1,14 +1,22 @@
 package main
 
 // fmt stands for the Format package. This package is all about formatting input and output.
+// bufio = to get user input.
+// strconv = to convert string to another type.
+// strings = to manipulating strings.
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 )
 
 // every go file must have a main funcation same as c programming.
 func main() {
 	// helloWorld()
 	// variable()
+	// userInput()
 
 }
 
@@ -45,4 +53,36 @@ func variable() {
 	// to declare constant
 	const pi float32 = 3.14
 	fmt.Println(pi)
+}
+
+func userInput() {
+	// Stdin = standard input
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter text: ")
+
+	// string data, error object. if you want to ignore error object variable then use underscore.
+	input, _ := reader.ReadString('\n')
+	fmt.Println("You entered:", input)
+
+	// convert string to float number
+	fmt.Print("Enter a number: ")
+	floatInput, _ := reader.ReadString('\n')
+	// strings.TrimSpace = if user enter space end of the number
+	aFloat, err := strconv.ParseFloat(strings.TrimSpace(floatInput), 64)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("Value of number: ", aFloat)
+	}
+
+	// conver string to int
+	fmt.Print("Enter a int: ")
+	intInput, _ := reader.ReadString('\n')
+	aNumber, err := strconv.ParseInt(strings.TrimSpace(intInput), 0, 64)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("Value of number: ", aNumber)
+	}
+
 }
