@@ -17,6 +17,7 @@ func main() {
 	// helloWorld()
 	// variable()
 	// userInput()
+	addToNumber()
 
 }
 
@@ -84,5 +85,13 @@ func userInput() {
 	} else {
 		fmt.Println("Value of number: ", aNumber)
 	}
+}
 
+func addToNumber() {
+	var i int = 5
+	var f float64 = 10.5
+
+	// here if i try to add int + float then its throw an missmatched type error.
+	sum := float64(i) + f
+	fmt.Print("Sum: ", sum)
 }
