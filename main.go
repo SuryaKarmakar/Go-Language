@@ -113,5 +113,33 @@ func addToNumber() {
 }
 
 func pointers() {
+	// A pointer is the address of that in memory.
+	// & operator -> returns the address of the variable or the function.
+	// * operator -> returns the data at the address.
+
+	var x int = 1
+	var y int
+
+	// "ip" declared to be a pointer to an integer
+	var ip *int
+
+	// "ip" points to the address of a "x"
+	ip = &x
+
+	// "y" holds value of the "ip".
+	y = *ip
+
+	fmt.Println("x =", x)
+	fmt.Println("ip =", ip)
+	fmt.Println("y =", y)
+
+	// new(), instead of returning a variable, it returns a pointer to the variable. the variable is initialized to zero by default with new
+	ptr := new(int)
+	fmt.Println("ptr =", ptr)  // some address
+	fmt.Println("ptr =", *ptr) // 0
+
+	// to set the value of that integer by referring to star
+	*ptr = 10 // 10
+	fmt.Println("ptr =", *ptr)
 
 }
