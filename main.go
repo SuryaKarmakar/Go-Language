@@ -15,14 +15,30 @@ import (
 // every go file must have a main funcation same as c programming.
 func main() {
 	// helloWorld()
+	// typeDeclaration()
 	// variable()
 	// userInput()
-	addToNumber()
-
+	// addToNumber()
+	pointers()
 }
 
 func helloWorld() {
-	fmt.Println("Hello world !")
+	fmt.Println("Hello, world!")
+}
+
+func typeDeclaration() {
+	// define a alias for a new type
+	type name string
+	type age int
+
+	// declare variables using that alias
+	var name1 name = "surya"
+	var age1 age = 24
+	fmt.Println(name1, age1)
+
+	var name2 name = "karmakar"
+	var age2 age = 28
+	fmt.Println(name2, age2)
 }
 
 func variable() {
@@ -94,4 +110,8 @@ func addToNumber() {
 	// here if i try to add int + float then its throw an missmatched type error.
 	sum := float64(i) + f
 	fmt.Print("Sum: ", sum)
+}
+
+func pointers() {
+
 }
